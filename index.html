@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SLS Divisi 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0b0d;--card:#141417;--line:#26262c;--tx:#ededf0;--mut:#8d8d96;--ac:#8f83ff;--r:16px;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:15.5px/1.55 "Plus Jakarta Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:Anton,Impact,sans-serif;font-weight:400;margin:0;letter-spacing:.02em}
+.wrap{max-width:560px;margin:0 auto;padding:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+label{display:block;font-size:14px;color:var(--mut);margin:12px 0 4px}
+input,select,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:#0c0c0c;color:var(--tx);font:inherit}
+input:focus,select:focus,button:focus-visible{outline:2px solid var(--ac);outline-offset:1px}
+button{font:inherit;font-weight:600;border:0;border-radius:10px;padding:12px 16px;background:linear-gradient(180deg,#9a8fff,#6656e0);color:#fff;cursor:pointer;box-shadow:0 6px 18px -8px rgba(143,131,255,.6),inset 0 1px 0 rgba(255,255,255,.45)}
+button.ghost{background:transparent;color:var(--tx);border:1px solid var(--line)}
+button.sm{padding:6px 10px;font-size:13px}
+.full{width:100%;margin-top:16px}
+.tabs{display:flex;gap:8px;margin-bottom:12px}.tabs button{flex:1}
+.hero{text-align:center;padding:28px 0 18px}.hero h1{font-size:44px;line-height:1.05}
+.hero p{color:var(--mut);margin:8px 0 0}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;padding:10px 16px}
+header b{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:22px}
+.dots{padding:6px 12px;font-size:22px;line-height:1}
+.menu{position:absolute;right:16px;top:100%;background:var(--card);border:1px solid var(--line);border-radius:var(--r);min-width:200px;padding:6px}
+.menu button{display:block;width:100%;text-align:left;background:none;color:var(--tx);font-weight:400}
+.menu button:hover{background:#222}
+.row{display:flex;align-items:center;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+.row:first-of-type{border-top:0}.row .g{flex:1;min-width:0}.mut{color:var(--mut);font-size:14px}
+.logo{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-family:Anton,Impact,sans-serif;color:#fff;flex:none}
+.vs{font-family:Anton,Impact,sans-serif;color:var(--ac)}
+.scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:440px}
+th,td{text-align:left;padding:8px 6px;border-top:1px solid var(--line);font-size:14px}th{color:var(--mut);font-weight:600}
+.err{color:#ff7a7a;font-size:14px;min-height:20px;margin-top:8px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.bar{height:8px;background:#26262c;border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ac);border-radius:99px}
+img.logo{object-fit:cover}.chk{display:flex;gap:8px;align-items:flex-start;color:var(--tx);font-size:14px;margin:14px 0 0}.chk input{width:auto;margin-top:4px}
+details.card summary{cursor:pointer;font-weight:600}details ul{margin:10px 0 0;padding-left:20px;color:var(--mut);font-size:14px}
+.hero h1{letter-spacing:.08em}.card{padding:18px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;text-align:left;color:var(--tx);font-weight:400;display:flex;flex-direction:column;gap:6px;min-height:104px;justify-content:space-between}
+.tile b{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:21px;line-height:1.15}.tile span{color:var(--mut);font-size:14px}
+.tile:hover,.tile:active{border-color:var(--ac)}
+.rowb{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:none;color:var(--tx);border:0;border-top:1px solid var(--line);border-radius:0;padding:10px 0;font-weight:400}
+.rowb:first-of-type{border-top:0}.big .logo{width:84px;height:84px;font-size:30px;margin:0 auto 12px}
+body{background:radial-gradient(720px 340px at 50% -70px,rgba(143,131,255,.17),transparent 70%) no-repeat,var(--bg)}
+.card{background:linear-gradient(165deg,#1a1a1f 0%,#111114 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 14px 32px -18px #000;border-color:#2a2a31}
+.card h3{font-size:21px;color:#e9e7ff}
+.hero h1{background:linear-gradient(100deg,#7d839b 0%,#e6e9f4 28%,#ffffff 50%,#b4bad0 72%,#7d839b 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite;filter:drop-shadow(0 2px 14px rgba(143,131,255,.25))}
+.hero::after{content:"";display:block;width:72px;height:2px;margin:18px auto 0;background:linear-gradient(90deg,transparent,var(--ac),transparent)}
+header{background:rgba(11,11,13,.78);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+header b{background:linear-gradient(100deg,#9aa0b8,#ffffff,#9aa0b8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.menu{background:#16161a;box-shadow:0 18px 40px -12px #000}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ac);box-shadow:0 0 0 3px rgba(143,131,255,.18)}
+button.ghost,.menu button,.tile,.rowb{box-shadow:none}
+.tile{position:relative;overflow:hidden;background:linear-gradient(160deg,#1c1c22,#121215);box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 12px 26px -16px #000;transition:border-color .25s,box-shadow .25s,transform .25s}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgba(220,215,255,.14) 50%,transparent 65%);transform:translateX(-130%);transition:transform .8s ease;pointer-events:none}
+.tile:hover,.tile:active{border-color:var(--ac);box-shadow:0 0 0 1px rgba(143,131,255,.25),0 14px 30px -14px rgba(143,131,255,.4);transform:translateY(-2px)}
+.tile:hover::after,.tile:active::after{transform:translateX(130%)}
+.tile b{color:#ecebff}
+.logo{box-shadow:0 0 0 2px rgba(143,131,255,.4),0 4px 12px -4px #000}
+.bar i{background:linear-gradient(90deg,#6656e0,#b7afff);box-shadow:0 0 10px rgba(143,131,255,.5)}
+th{color:#a7a1d6}.vs{text-shadow:0 0 12px rgba(143,131,255,.5)}
+button:not(.ghost):not(.tile):not(.rowb):active{transform:translateY(1px)}
+.in{animation:rise .45s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}}
+@keyframes shine{0%{background-position:120% 0}100%{background-position:-120% 0}}
+@media (prefers-reduced-motion:reduce){*,*::after{animation:none!important;transition:none!important}}
+[hidden]{display:none!important}
+</style></head><body>
+<section id="auth"><div class="wrap">
+ <div class="hero"><h1>SLS<br>SEA LEAGUE SERIES</h1><p>Divisi 2. Daftar dulu untuk melihat dashboard turnamen.</p></div>
+ <div class="card">
+  <div class="tabs"><button id="tD">Daftar</button><button id="tM" class="ghost">Masuk</button></div>
+  <div id="fD">
+   <label for="user">Username</label><input id="user" autocomplete="off"><label for="pw">Kata sandi</label><input id="pw" type="password" autocomplete="new-password" placeholder="Minimal 6 karakter"><label for="pw2">Ulangi kata sandi</label><input id="pw2" type="password" autocomplete="new-password">
+   <label for="wa">Nomor WhatsApp</label><input id="wa" inputmode="tel" placeholder="08xxxxxxxxxx"><label for="dc">Discord</label><input id="dc" autocomplete="off" placeholder="username Discord">
+   <label for="pilih">Pilih tim yang sudah register</label><select id="pilih"></select>
+   <div id="baruBox"><label for="tim">Nama tim baru</label><input id="tim" autocomplete="off"><label for="tag">Singkatan tim (maks 5 huruf)</label><input id="tag" maxlength="5" autocomplete="off"></div>
+   <details class="card" style="margin:16px 0 0"><summary>Baca peraturan turnamen</summary><ul id="rulesList"></ul></details><label class="chk"><input id="setuju" type="checkbox"> Saya sudah membaca dan setuju dengan peraturan turnamen</label><button class="full" id="bDaftar">Daftar</button>
+  </div>
+  <div id="fM" hidden>
+   <label for="mUser">Username</label><input id="mUser" autocomplete="off">
+   <label for="mPw">Kata sandi</label><input id="mPw" type="password" autocomplete="current-password">
+   <button class="full" id="bMasuk">Masuk</button>
+  </div>
+  <div class="err" id="err" role="alert"></div>
+ </div>
+ <p class="mut" style="text-align:center"><a href="#" id="lOwner" style="color:var(--mut)">Masuk sebagai owner</a></p>
+ <div class="card" id="oBox" hidden><label for="kode">Kode owner</label><input id="kode" type="password"><button class="full" id="bOwner">Masuk owner</button></div>
+</div></section>
+
+<section id="app" hidden>
+ <header><div class="wrap"><b>SLS DIVISI 2</b><button class="ghost dots" id="bDots" aria-label="Menu">&#8942;</button></div>
+  <div class="menu" id="menu" hidden></div></header>
+ <div class="wrap" id="page"></div>
+</section>
+
+<script>
+var KEY="sls_d2",ADMIN_WA="62XXXXXXXXXX",OWNER_CODE="SLSOWNER2";
+var S={teams:[],users:[],jadwal:[],stat:[],news:[{t:"Pendaftaran SLS Divisi 2 dibuka",d:"Daftarkan timmu atau gabung ke tim yang sudah terdaftar."}]};
+var me=null,owner=false,view="dash";
+var MAX=16,MAXP=7,RULES=["Satu tim maksimal 5 pemain inti dan 2 cadangan.","Username wajib sama dengan nickname in-game SAMP.","Dilarang cheat, bug abuse, dan toxic. Pelanggaran berujung diskualifikasi.","Tim wajib hadir 15 menit sebelum jadwal. Terlambat dianggap kalah WO.","Tim baru aktif setelah disetujui admin.","Keputusan admin dan owner bersifat final."],INFO={format:"Fase grup lalu gugur",hadiah:"Diumumkan admin",biaya:"Gratis",mulai:"Segera diumumkan"};
+try{var raw=localStorage.getItem(KEY);if(raw)S=JSON.parse(raw);var m=localStorage.getItem(KEY+"_me");if(m)me=JSON.parse(m)}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}if(owner)fetch("/api/state",{method:"POST",headers:{"content-type":"application/json","x-owner-code":OWNER_CODE},body:JSON.stringify(S)}).catch(function(){})}
+function $(i){return document.getElementById(i)}
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function sha(u,p){return crypto.subtle.digest("SHA-256",new TextEncoder().encode("sls:"+u.toLowerCase()+":"+p)).then(function(b){return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,"0")}).join("")})}
+function norm(w){return String(w).replace(/\D/g,"").replace(/^0/,"62")}
+function logo(n){var tt=S.teams.filter(function(t){return t.name==n})[0];if(tt&&tt.logo)return '<img class="logo" src="'+tt.logo+'" alt="">';var h=0;for(var i=0;i<n.length;i++)h=(h*31+n.charCodeAt(i))%360;h=190+h%130;return '<div class="logo" style="background:hsl('+h+',50%,40%)">'+esc(n.slice(0,2).toUpperCase())+'</div>'}
+function ok(){return S.teams.filter(function(t){return t.ok})}
+
+var LOGO="";
+function opts(){var o='<option value="">Buat tim baru</option>';ok().forEach(function(t){o+='<option>'+esc(t.name)+'</option>'});$("pilih").innerHTML=o;$("baruBox").hidden=false}
+$("pilih").onchange=function(){$("baruBox").hidden=!!this.value};
+$("tD").onclick=function(){$("fD").hidden=false;$("fM").hidden=true;$("tD").className="";$("tM").className="ghost";$("err").textContent=""};
+$("tM").onclick=function(){$("fD").hidden=true;$("fM").hidden=false;$("tM").className="";$("tD").className="ghost";$("err").textContent=""};
+$("lOwner").onclick=function(e){e.preventDefault();$("oBox").hidden=!$("oBox").hidden};
+$("bOwner").onclick=function(){if($("kode").value===OWNER_CODE){owner=true;try{localStorage.setItem(KEY+"_o","1")}catch(e){}enter()}else $("err").textContent="Kode owner salah."};
+
+$("bDaftar").onclick=async function(){
+ var u=$("user").value.trim(),w=norm($("wa").value),p=$("pilih").value,t=$("tim").value.trim();
+ if(!u||w.length<9)return $("err").textContent="Isi username dan nomor WhatsApp yang benar.";
+ if(S.cfg.closed)return $("err").textContent="Pendaftaran sedang ditutup.";
+ if($("pw").value.length<6)return $("err").textContent="Kata sandi minimal 6 karakter.";if($("pw").value!==$("pw2").value)return $("err").textContent="Kata sandi tidak sama.";if(S.users.some(function(x){return x.user.toLowerCase()==u.toLowerCase()}))return $("err").textContent="Username sudah dipakai.";if(!$("setuju").checked)return $("err").textContent="Centang persetujuan peraturan dulu.";
+ if(!p&&!t)return $("err").textContent="Pilih tim atau isi nama tim baru.";
+ if(S.users.some(function(x){return x.wa===w}))return $("err").textContent="Nomor ini sudah terdaftar. Silakan masuk.";
+ var team=p||t;if(p&&S.users.filter(function(x){return x.team==p}).length>=MAXP)return $("err").textContent="Tim "+p+" sudah penuh ("+MAXP+" pemain).";
+ if(!p){if(S.teams.some(function(x){return x.name.toLowerCase()===t.toLowerCase()}))return $("err").textContent="Nama tim sudah dipakai.";if(S.teams.length>=MAX)return $("err").textContent="Slot tim sudah penuh.";S.teams.push({name:t,tag:$("tag").value.trim().toUpperCase(),logo:LOGO,ok:false})}
+ me={user:u,wa:w,dc:$("dc").value.trim(),team:team,ok:!!p,pwh:await sha(u,$("pw").value)};S.users.push(me);save();fetch("/api/register",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({me:me,team:p?null:S.teams[S.teams.length-1]})}).catch(function(){});
+ try{localStorage.setItem(KEY+"_me",JSON.stringify(me))}catch(e){}
+ try{window.open("https://wa.me/"+ADMIN_WA+"?text="+encodeURIComponent("Daftar SLS Divisi 2\nTim: "+team+(p?" (gabung)":" (tim baru)")+"\nUsername: "+u+"\nWhatsApp: "+w+"\nDiscord: "+($("dc").value||"-")),"_blank")}catch(e){}
+ enter()};
+$("bMasuk").onclick=async function(){
+ var u=$("mUser").value.trim().toLowerCase(),pw=$("mPw").value;
+ if(!u||!pw)return $("err").textContent="Isi username dan kata sandi.";
+ var h=await sha(u,pw);
+ var f=S.users.filter(function(x){return x.user.toLowerCase()===u&&x.pwh===h})[0];
+ if(f){me=f;try{localStorage.setItem(KEY+"_me",JSON.stringify(me))}catch(e){}return enter()}
+ try{var r=await fetch("/api/login",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({user:u,pwh:h})});var d=r.ok?await r.json():null;
+  if(!d||!d.user)return $("err").textContent="Username atau kata sandi salah.";
+  me=d;try{localStorage.setItem(KEY+"_me",JSON.stringify(me))}catch(e){}enter()}
+ catch(e){$("err").textContent="Username atau kata sandi salah."}};
+
+function enter(){$("auth").hidden=true;$("app").hidden=false;view=owner?"owner":"dash";draw()}
+function logout(){me=null;owner=false;try{localStorage.removeItem(KEY+"_o")}catch(e){}try{localStorage.removeItem(KEY+"_me")}catch(e){}$("app").hidden=true;$("auth").hidden=false;$("menu").hidden=true;$("err").textContent="";opts()}
+$("bDots").onclick=function(){var m=$("menu");m.hidden=!m.hidden;if(!m.hidden){
+ m.innerHTML='<button data-v="profil">Profil</button><button data-v="dash">Dashboard</button><button data-v="berita">Berita SLS Terkini</button><button data-v="aturan">Peraturan &amp; Kontak</button>'+(owner?'<button data-v="owner">Panel Owner</button>':'')+'<button data-v="out">Keluar</button>'}};
+$("menu").onclick=function(e){var v=e.target.getAttribute("data-v");if(!v)return;$("menu").hidden=true;if(v=="out")return logout();view=v;draw()};
+
+function sec(t,b){return '<div class="card"><h3>'+t+'</h3><div style="margin-top:8px">'+b+'</div></div>'}
+function draw(keep){
+ var h="";
+ if(view=="profil"){
+  h=me?sec("Profil",'<div class="row">'+logo(me.team)+'<div class="g"><b>'+esc(me.user)+'</b><div class="mut">Tim '+esc(me.team)+'</div></div></div><p class="mut">WhatsApp: '+esc(me.wa)+'<br>Discord: '+esc(me.dc||"-")+'<br>Status: '+((me.ok||teamOk(me.team))?"Terdaftar":"Menunggu persetujuan admin")+'</p>'):sec("Profil","Kamu masuk sebagai owner.")
+ }else if(view=="berita"){
+  h=sec("Berita SLS Terkini",S.news.map(function(n){return '<div class="row"><div class="g"><b>'+esc(n.t)+'</b><div class="mut">'+esc(n.d)+'</div></div></div>'}).join(""))
+ }else if(view=="aturan"){h=sec("Peraturan turnamen",'<ol style="padding-left:20px;margin:0">'+RULES.map(function(r){return '<li style="margin-bottom:6px">'+esc(r)+'</li>'}).join("")+'</ol>')+sec("Kontak admin",'<a style="color:var(--ac)" href="https://wa.me/'+ADMIN_WA+'" target="_blank" rel="noopener">Hubungi admin lewat WhatsApp</a>')
+ }else if(view=="owner"&&owner){h=ownerPage()
+ }else if(view=="info"){h=infoCard()
+ }else if(view=="peserta"){var pes=S.users.filter(function(u){return u.ok||teamOk(u.team)});h=sec("Peserta terdaftar ("+pes.length+")",pes.length?pes.map(function(u){return '<div class="row">'+logo(u.team)+'<div class="g"><b>'+esc(u.user)+'</b><div class="mut">'+esc(u.team)+'</div></div></div>'}).join(""):'<p class="mut">Belum ada peserta yang disetujui.</p>')
+ }else if(view=="tim"){h=sec("List tim ("+ok().length+")",ok().length?ok().map(function(t){return '<button class="rowb" data-go="tim:'+esc(t.name)+'">'+logo(t.name)+'<div class="g"><b>'+esc(t.name)+'</b><div class="mut">'+(t.tag?esc(t.tag)+' &middot; ':'')+S.users.filter(function(u){return u.team==t.name}).length+' pemain</div></div></button>'}).join(""):'<p class="mut">Belum ada tim yang disetujui.</p>')
+ }else if(view.indexOf("tim:")==0){var nm=view.slice(4),tt=S.teams.filter(function(x){return x.name==nm})[0];
+  h=tt?'<div class="hero" style="padding:8px 0 16px"><div class="big">'+logo(nm)+'</div><h2 style="font-size:30px">'+esc(nm)+'</h2><p>'+esc(tt.tag||"")+'</p></div>'+sec("Pemain",S.users.filter(function(u){return u.team==nm}).map(function(u){return '<div class="row"><div class="g"><b>'+esc(u.user)+'</b></div></div>'}).join("")||'<p class="mut">Belum ada pemain.</p>')+sec("Pertandingan",jdwHtml(S.jadwal.filter(function(j){return j.a==nm||j.b==nm}))):sec("Tim","Tim tidak ditemukan.")
+ }else if(view=="jadwal"){h=sec("Jadwal permainan",jdwHtml(S.jadwal))
+ }else if(view=="klasemen"){h=klasemen()
+ }else if(view=="pemain"){var st=S.stat.slice().sort(function(a,b){return b.k-a.k});h=sec("Pemain terbaik",st.length?'<div class="scroll"><table><tr><th>#</th><th>Pemain</th><th>Tim</th><th>Karakter</th><th>Kill</th><th>Assist</th><th>Akurasi</th><th>Main</th></tr>'+st.map(function(s,i){return '<tr><td>'+(i+1)+'</td><td>'+esc(s.n)+'</td><td>'+esc(s.t)+'</td><td>'+esc(s.c)+'</td><td>'+s.k+'</td><td>'+s.a+'</td><td>'+s.ac+'%</td><td>'+(s.m?"Sudah":"Belum")+'</td></tr>'}).join("")+'</table></div>':'<p class="mut">Statistik pemain belum diisi owner.</p>')
+ }else{
+  var pc=S.users.filter(function(u){return u.ok||teamOk(u.team)}).length;
+  var TL=[["info","Info Turnamen",ok().length+" / "+MAX+" slot"],["peserta","Peserta",pc+" terdaftar"],["tim","List Tim",ok().length+" tim"],["jadwal","Jadwal Permainan",S.jadwal.length+" pertandingan"],["klasemen","Klasemen","Peringkat tim"],["pemain","Pemain Terbaik",S.stat.length+" pemain"],["berita","Berita SLS",S.news.length+" berita"],["aturan","Peraturan dan Kontak","Aturan dan admin"]];
+  if(me)TL.push(["profil","Profil",esc(me.user)]);
+  h='<div class="hero"><h1>'+esc(S.cfg.title)+'<br>( '+esc(S.cfg.sub)+' )</h1></div>'+(S.cfg.ann?sec("Pengumuman",esc(S.cfg.ann)):'')+'<div class="tiles">'+TL.map(function(x){return '<button class="tile" data-go="'+x[0]+'"><b>'+x[1]+'</b><span>'+x[2]+'</span></button>'}).join("")+'</div>'
+ }
+ if(view!="dash"&&view!="owner")h=backBtn()+h;$("page").innerHTML=h;var pg=$("page");pg.classList.remove("in");void pg.offsetWidth;if(!keep)pg.classList.add("in");if(!keep)window.scrollTo(0,0);bindOwner()}
+function infoCard(){var n=ok().length,p=Math.round(n/MAX*100);return sec("Info turnamen",'<div class="mut">Slot tim terisi</div><div class="bar"><i style="width:'+p+'%"></i></div><p style="margin:8px 0 14px"><b>'+n+' / '+MAX+'</b> tim &middot; '+(S.teams.length-n)+' menunggu persetujuan</p><div class="grid2"><div><div class="mut">Format</div>'+esc(INFO.format)+'</div><div><div class="mut">Biaya</div>'+esc(INFO.biaya)+'</div><div><div class="mut">Hadiah</div>'+esc(INFO.hadiah)+'</div><div><div class="mut">Mulai</div>'+esc(INFO.mulai)+'</div></div>')}
+function klasemen(){var T={};ok().forEach(function(t){T[t.name]={n:t.name,m:0,w:0,d:0,l:0,p:0}});S.jadwal.forEach(function(j){if(j.sa==null||j.sa===""||!T[j.a]||!T[j.b])return;var a=+j.sa,b=+j.sb;T[j.a].m++;T[j.b].m++;if(a>b){T[j.a].w++;T[j.a].p+=3;T[j.b].l++}else if(b>a){T[j.b].w++;T[j.b].p+=3;T[j.a].l++}else{T[j.a].d++;T[j.b].d++;T[j.a].p++;T[j.b].p++}});var r=Object.keys(T).map(function(k){return T[k]}).sort(function(a,b){return b.p-a.p||b.w-a.w});return sec("Klasemen",r.length?'<div class="scroll"><table><tr><th>Tim</th><th>Main</th><th>Menang</th><th>Seri</th><th>Kalah</th><th>Poin</th></tr>'+r.map(function(x){return '<tr><td>'+esc(x.n)+'</td><td>'+x.m+'</td><td>'+x.w+'</td><td>'+x.d+'</td><td>'+x.l+'</td><td><b>'+x.p+'</b></td></tr>'}).join("")+'</table></div>':'<p class="mut">Klasemen muncul setelah ada tim yang disetujui.</p>')}
+function backBtn(){return '<button class="ghost sm" data-go="'+(view.indexOf("tim:")==0?"tim":"dash")+'" style="margin-bottom:14px">Kembali</button>'}
+function jdwHtml(l){l=l.slice().sort(function(a,b){return(a.tgl+a.jam)<(b.tgl+b.jam)?-1:1});return l.length?l.map(function(j){return '<div class="row">'+logo(j.a)+'<div class="g" style="text-align:center"><b>'+esc(j.a)+' <span class="vs">'+(j.sa==null||j.sa===""?"VS":j.sa+" : "+j.sb)+'</span> '+esc(j.b)+'</b><div class="mut">'+(j.rd?esc(j.rd)+' &middot; ':'')+esc(j.tgl)+' &middot; '+esc(j.jam)+'</div></div>'+logo(j.b)+'</div>'}).join(""):'<p class="mut">Belum ada pertandingan.</p>'}
+function teamOk(n){return ok().some(function(t){return t.name==n})}
+
+var ot="ring",flash="",arm="",was="";
+var DEF={title:"SLS",sub:"SEA LEAGUE SERIES DIVISI 2",ann:"",max:16,maxp:7,format:INFO.format,hadiah:INFO.hadiah,biaya:INFO.biaya,mulai:INFO.mulai,wa:ADMIN_WA,code:OWNER_CODE,closed:false,rules:RULES.slice()};
+function applyCfg(){["jadwal","stat","news","teams","users"].forEach(function(z){S[z]=S[z]||[]});var c=S.cfg=Object.assign({},DEF,S.cfg||{});MAX=+c.max;MAXP=+c.maxp;RULES=c.rules;INFO={format:c.format,hadiah:c.hadiah,biaya:c.biaya,mulai:c.mulai};ADMIN_WA=c.wa;OWNER_CODE=c.code}
+function conf(k){if(was==k)return true;arm=k;flash="Tekan tombol yang sama sekali lagi untuk konfirmasi.";return false}
+function fld(id,l,v,t){return '<label for="'+id+'">'+l+'</label><input id="'+id+'" type="'+(t||"text")+'" value="'+esc(v)+'">'}
+function tOpts(){return ok().map(function(t){return '<option>'+esc(t.name)+'</option>'}).join("")}
+function members(n){return S.users.filter(function(u){return u.team==n}).map(function(u){return esc(u.user)+' ('+esc(u.wa)+(u.dc?', '+esc(u.dc):'')+')'}).join(", ")}
+function btn2(a,i,l,c){return '<button class="'+(c||"")+'" data-act="'+a+'" data-i="'+i+'">'+l+'</button>'}
+function ownerPage(){
+ var tabs=[["ring","Ringkasan"],["tim","Tim"],["jdw","Jadwal"],["stat","Statistik"],["brt","Berita"],["set","Pengaturan"]],C=S.cfg,b="";
+ var h='<div class="hero" style="padding-bottom:8px"><h2 style="font-size:30px">Panel Owner</h2></div><div class="scroll"><div class="tabs" style="min-width:max-content">'+tabs.map(function(t){return '<button class="sm'+(ot==t[0]?'':' ghost')+'" data-ot="'+t[0]+'">'+t[1]+'</button>'}).join("")+'</div></div>'+(flash?'<div class="card" style="border-color:var(--ac)">'+esc(flash)+'</div>':'');
+ flash="";
+ if(ot=="ring"){
+  b=sec("Ringkasan",'<div class="grid2"><div><div class="mut">Tim disetujui</div><b>'+ok().length+' / '+MAX+'</b></div><div><div class="mut">Menunggu ACC</div><b>'+(S.teams.length-ok().length)+'</b></div><div><div class="mut">Pemain</div><b>'+S.users.length+'</b></div><div><div class="mut">Jadwal</div><b>'+S.jadwal.length+'</b></div></div>')+
+  sec("Pendaftaran",'<p class="mut" style="margin:0 0 10px">Status: '+(C.closed?"Ditutup":"Dibuka")+'</p>'+btn2("tog","","Toggle".replace("Toggle",C.closed?"Buka pendaftaran":"Tutup pendaftaran")))
+ }else if(ot=="tim"){
+  var pend=S.teams.map(function(t,i){return[t,i]}).filter(function(x){return!x[0].ok});
+  b=sec("Menunggu persetujuan",pend.length?pend.map(function(x){var t=x[0];return '<div class="row">'+logo(t.name)+'<div class="g"><b>'+esc(t.name)+'</b><div class="mut">'+esc(t.tag||"")+' &middot; '+members(t.name)+'</div></div>'+btn2("acc",x[1],"ACC","sm")+btn2("rej",x[1],"Tolak","sm ghost")+'</div>'}).join(""):'<p class="mut">Tidak ada yang menunggu.</p>')+
+  sec("Tambah tim langsung",fld("nn","Nama tim","")+fld("ng","Singkatan","")+'<button class="full" data-act="addt">Tambah tim</button>')+
+  S.teams.map(function(t,i){if(!t.ok)return"";return '<div class="card"><div class="row">'+logo(t.name)+'<div class="g">'+fld("tn"+i,"Nama tim",t.name)+fld("tg"+i,"Singkatan",t.tag||"")+'</div></div><label>Ganti logo (maks 150 KB)</label><input type="file" accept="image/*" data-lg="'+i+'"><div class="grid2" style="margin-top:12px">'+btn2("svt",i,"Simpan")+btn2("rlg",i,"Hapus logo","ghost")+'</div><div style="margin-top:12px">'+S.users.filter(function(u){return u.team==t.name}).map(function(u){return '<div class="row"><div class="g">'+esc(u.user)+'<div class="mut">'+esc(u.wa)+(u.dc?' &middot; '+esc(u.dc):'')+'</div></div><button class="sm ghost" data-act="kick" data-w="'+esc(u.wa)+'">Keluarkan</button></div>'}).join("")+'</div>'+btn2("del",i,"Hapus tim","ghost full")+'</div>'}).join("")
+ }else if(ot=="jdw"){
+  b=sec("Tambah jadwal",'<div class="grid2"><div><label for="ja">Tim A</label><select id="ja">'+tOpts()+'</select></div><div><label for="jb">Tim B</label><select id="jb">'+tOpts()+'</select></div><div>'+fld("jt","Tanggal","","date")+'</div><div>'+fld("jj","Jam","","time")+'</div><div>'+fld("jsa","Skor A (opsional)","","number")+'</div><div>'+fld("jsb","Skor B (opsional)","","number")+'</div></div>'+fld("jr","Babak atau grup (opsional)","")+'<button class="full" data-act="addj">Tambah jadwal</button>')+
+  S.jadwal.map(function(j,i){return '<div class="card"><b>'+esc(j.a)+' VS '+esc(j.b)+'</b><div class="mut">'+esc(j.rd||"")+' '+esc(j.tgl)+' &middot; '+esc(j.jam)+'</div><div class="grid2"><div>'+fld("sa"+i,"Skor A",j.sa==null?"":j.sa,"number")+'</div><div>'+fld("sb"+i,"Skor B",j.sb==null?"":j.sb,"number")+'</div></div><div class="grid2" style="margin-top:12px">'+btn2("sks",i,"Simpan skor")+btn2("dj",i,"Hapus","ghost")+'</div></div>'}).join("")
+ }else if(ot=="stat"){
+  b=sec("Tambah statistik pemain",fld("sn","Nama pemain","")+'<label for="st">Tim</label><select id="st">'+tOpts()+'</select>'+fld("sc","Karakter dipakai","")+'<div class="grid2"><div>'+fld("sk","Kill","","number")+'</div><div>'+fld("sa","Assist","","number")+'</div></div>'+fld("sac","Akurasi (%)","","number")+'<label class="chk"><input id="sm" type="checkbox"> Sudah main</label><button class="full" data-act="adds">Tambah statistik</button>')+
+  S.stat.map(function(s,i){return '<div class="card"><b>'+esc(s.n)+'</b> <span class="mut">'+esc(s.t)+'</span>'+fld("c"+i,"Karakter",s.c)+'<div class="grid2"><div>'+fld("k"+i,"Kill",s.k,"number")+'</div><div>'+fld("a"+i,"Assist",s.a,"number")+'</div></div>'+fld("p"+i,"Akurasi (%)",s.ac,"number")+'<label class="chk"><input id="m'+i+'" type="checkbox"'+(s.m?' checked':'')+'> Sudah main</label><div class="grid2" style="margin-top:12px">'+btn2("sst",i,"Simpan")+btn2("ds",i,"Hapus","ghost")+'</div></div>'}).join("")
+ }else if(ot=="brt"){
+  b=sec("Tambah berita",fld("nt","Judul","")+fld("nd","Isi singkat","")+'<button class="full" data-act="addb">Tambah berita</button>')+sec("Daftar berita",S.news.map(function(n,i){return '<div class="row"><div class="g"><b>'+esc(n.t)+'</b><div class="mut">'+esc(n.d)+'</div></div>'+btn2("db",i,"Hapus","sm ghost")+'</div>'}).join("")||'<p class="mut">Belum ada berita.</p>')
+ }else{
+  b=sec("Tampilan dashboard",fld("cti","Judul",C.title)+fld("csu","Subjudul",C.sub)+fld("can","Pengumuman (kosongkan untuk menyembunyikan)",C.ann||""))+
+  sec("Info turnamen",fld("cfo","Format",C.format)+fld("cha","Hadiah",C.hadiah)+fld("cbi","Biaya",C.biaya)+fld("cmu","Mulai",C.mulai)+'<div class="grid2"><div>'+fld("cmx","Maks tim",C.max,"number")+'</div><div>'+fld("cmp","Maks pemain per tim",C.maxp,"number")+'</div></div>')+
+  sec("Admin dan akses",fld("cwa","WhatsApp admin (format 628...)",C.wa)+fld("cco","Kode owner",C.code))+
+  sec("Peraturan",'<label for="cru">Satu aturan per baris</label><textarea id="cru" rows="7">'+esc(C.rules.join("\n"))+'</textarea>')+
+  '<button class="full" style="margin-bottom:14px" data-act="sset">Simpan pengaturan</button>'+
+  sec("Cadangan data",'<label for="exp">Salin untuk cadangan</label><textarea id="exp" rows="3" readonly>'+esc(JSON.stringify(S))+'</textarea><label for="imp">Tempel cadangan untuk dipulihkan</label><textarea id="imp" rows="3"></textarea><div class="grid2" style="margin-top:12px"><button data-act="imp">Pulihkan</button><button class="ghost" data-act="rst">Reset peserta dan jadwal</button></div>')
+ }
+ return h+b}
+
+function bindOwner(){
+ if(!owner||view!="owner")return;
+ var P=$("page"),v=function(i){var e=$(i);return e?e.value:""};
+ P.onchange=function(e){var t=e.target,i=t.getAttribute("data-lg");if(i==null)return;var f=t.files[0];if(!f)return;if(f.size>150000){flash="Logo maksimal 150 KB.";return draw(1)}var r=new FileReader();r.onload=function(){S.teams[+i].logo=r.result;save();flash="Logo diperbarui.";draw(1)};r.readAsDataURL(f)};
+ P.onclick=function(e){
+  var a=e.target.closest("button");if(!a)return;
+  var g=function(n){return a.getAttribute(n)},x=g("data-ot"),k=g("data-act"),i=+g("data-i"),T=S.teams[i];
+  was=arm;arm="";
+  if(x){ot=x;return draw(1)}
+  if(!k)return;
+  if(k=="tog"){S.cfg.closed=!S.cfg.closed;flash=S.cfg.closed?"Pendaftaran ditutup.":"Pendaftaran dibuka."}
+  else if(k=="acc"){T.ok=true;flash="Tim "+T.name+" disetujui."}
+  else if(k=="rej"||k=="del"){if(k=="del"&&!conf("del"+i))return draw(1);var n=T.name;S.teams.splice(i,1);S.users=S.users.filter(function(u){return u.team!=n});S.jadwal=S.jadwal.filter(function(j){return j.a!=n&&j.b!=n});S.stat=S.stat.filter(function(s){return s.t!=n});flash="Tim "+n+" dihapus."}
+  else if(k=="addt"){var nm=v("nn").trim();if(!nm)flash="Isi nama tim.";else if(S.teams.some(function(t){return t.name.toLowerCase()==nm.toLowerCase()}))flash="Nama tim sudah ada.";else{S.teams.push({name:nm,tag:v("ng").trim().toUpperCase().slice(0,5),logo:"",ok:true});flash="Tim ditambahkan."}}
+  else if(k=="svt"){var nn=v("tn"+i).trim(),o=T.name;if(!nn)flash="Nama tim tidak boleh kosong.";else if(S.teams.some(function(t,j){return j!=i&&t.name.toLowerCase()==nn.toLowerCase()}))flash="Nama tim sudah dipakai.";else{T.name=nn;T.tag=v("tg"+i).trim().toUpperCase().slice(0,5);S.users.forEach(function(u){if(u.team==o)u.team=nn});S.jadwal.forEach(function(j){if(j.a==o)j.a=nn;if(j.b==o)j.b=nn});S.stat.forEach(function(s){if(s.t==o)s.t=nn});flash="Tim disimpan."}}
+  else if(k=="rlg"){T.logo="";flash="Logo dihapus."}
+  else if(k=="kick"){var w=g("data-w");S.users=S.users.filter(function(u){return u.wa!=w});flash="Pemain dikeluarkan."}
+  else if(k=="addj"){var A=v("ja"),B=v("jb");if(!A||!B||A==B||!v("jt"))flash="Pilih dua tim berbeda dan isi tanggal.";else{S.jadwal.push({a:A,b:B,tgl:v("jt"),jam:v("jj")||"-",rd:v("jr").trim(),sa:v("jsa"),sb:v("jsb")});flash="Jadwal ditambahkan."}}
+  else if(k=="sks"){var s1=v("sa"+i),s2=v("sb"+i);if(s1===""||s2===""){s1="";s2=""}S.jadwal[i].sa=s1;S.jadwal[i].sb=s2;flash="Skor disimpan."}
+  else if(k=="dj"){if(!conf("dj"+i))return draw(1);S.jadwal.splice(i,1);flash="Jadwal dihapus."}
+  else if(k=="adds"){if(!v("sn").trim()||!v("st"))flash="Isi nama pemain dan pilih tim.";else{S.stat.push({n:v("sn").trim(),t:v("st"),c:v("sc").trim()||"-",k:+v("sk")||0,a:+v("sa")||0,ac:Math.min(100,+v("sac")||0),m:$("sm").checked});flash="Statistik ditambahkan."}}
+  else if(k=="sst"){var s=S.stat[i];s.c=v("c"+i).trim()||"-";s.k=+v("k"+i)||0;s.a=+v("a"+i)||0;s.ac=Math.min(100,+v("p"+i)||0);s.m=$("m"+i).checked;flash="Statistik disimpan."}
+  else if(k=="ds"){if(!conf("ds"+i))return draw(1);S.stat.splice(i,1);flash="Statistik dihapus."}
+  else if(k=="addb"){if(!v("nt").trim())flash="Isi judul berita.";else{S.news.unshift({t:v("nt").trim(),d:v("nd").trim()});flash="Berita ditambahkan."}}
+  else if(k=="db"){S.news.splice(i,1);flash="Berita dihapus."}
+  else if(k=="sset"){var c=S.cfg;c.title=v("cti").trim()||"SLS";c.sub=v("csu").trim();c.ann=v("can").trim();c.format=v("cfo");c.hadiah=v("cha");c.biaya=v("cbi");c.mulai=v("cmu");c.max=Math.max(2,+v("cmx")||16);c.maxp=Math.max(1,+v("cmp")||7);c.wa=norm(v("cwa"))||c.wa;c.code=v("cco").trim()||c.code;c.rules=v("cru").split("\n").map(function(q){return q.trim()}).filter(Boolean);applyCfg();flash="Pengaturan disimpan."}
+  else if(k=="imp"){try{var d=JSON.parse(v("imp"));if(!Array.isArray(d.teams)||!Array.isArray(d.users))throw 0;S=d;applyCfg();flash="Data dipulihkan."}catch(er){flash="Format data cadangan tidak valid."}}
+  else if(k=="rst"){if(!conf("rst"))return draw(1);S.teams=[];S.users=[];S.jadwal=[];S.stat=[];flash="Data peserta dan jadwal direset."}
+  save();draw(1)}}
+applyCfg();
+$("page").addEventListener("click",function(e){var b=e.target.closest("[data-go]");if(!b)return;view=b.getAttribute("data-go");draw()});
+opts();
+$("rulesList").innerHTML=RULES.map(function(r){return '<li>'+esc(r)+'</li>'}).join("");
+try{if(localStorage.getItem(KEY+"_o")){owner=true;enter()}}catch(e){}
+if(!owner&&me)enter();
+(function(){var h={};if(owner)h["x-owner-code"]=OWNER_CODE;fetch("/api/state",{headers:h}).then(function(r){return r.ok?r.json():null}).then(function(d){if(!d||!d.teams)return;if(!owner)d.users=(S.users||[]).filter(function(u){return me&&u.wa===me.wa}).concat(d.users||[]);S=d;applyCfg();try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}if(!$("app").hidden)draw(1);else opts()}).catch(function(){})})();
+</script></body></html>
